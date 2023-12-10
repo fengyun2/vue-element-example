@@ -3,6 +3,7 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   transpileDependencies: true,
+  runtimeCompiler: true,
   configureWebpack: {
     resolve: {
       extensions: [".tsx", ".ts", ".js", ".json"],

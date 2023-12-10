@@ -37,7 +37,7 @@
     <UserDemo />
     <ImgCompressDemo />
     <QRcodeReader />
-    <WordComment />
+    <!-- <WordComment /> -->
     <FileDowload />
     <EleTable />
     <FileStreamDownload />
@@ -52,7 +52,7 @@ import CityDemo from "./components/city-demo";
 import UserDemo from "./components/user";
 import ImgCompressDemo from "./components/img-compress";
 import QRcodeReader from "./components/qrcode-reader";
-import WordComment from "./components/word-comment";
+// import WordComment from "./components/word-comment";
 import FileDowload from "./components/file-download";
 import EleTable from "./components/ele-table";
 import FileStreamDownload from "./components/file-stream-download";
@@ -66,7 +66,7 @@ export default {
     UserDemo,
     ImgCompressDemo,
     QRcodeReader,
-    WordComment,
+    // WordComment,
     FileDowload,
     EleTable,
     FileStreamDownload,
