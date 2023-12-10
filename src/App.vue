@@ -41,6 +41,7 @@
     <FileDowload />
     <EleTable />
     <FileStreamDownload />
+    <ImgContent />
   </div>
 </template>
 
@@ -55,6 +56,7 @@ import WordComment from "./components/word-comment";
 import FileDowload from "./components/file-download";
 import EleTable from "./components/ele-table";
 import FileStreamDownload from "./components/file-stream-download";
+import ImgContent from "./components/imgcontent";
 
 export default {
   name: "App",
@@ -68,6 +70,7 @@ export default {
     FileDowload,
     EleTable,
     FileStreamDownload,
+    ImgContent,
   },
   data() {
     return {
