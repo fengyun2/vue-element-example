@@ -43,6 +43,7 @@
     <FileStreamDownload />
     <ImgContent />
     <ImgContent2 />
+    <ParagraphEllipsis />
   </div>
 </template>
 
@@ -59,6 +60,7 @@ import EleTable from "./components/ele-table";
 import FileStreamDownload from "./components/file-stream-download";
 import ImgContent from "./components/imgcontent";
 import ImgContent2 from "./components/imgcontent2";
+import ParagraphEllipsis from "./components/paragraph-ellipsis";
 
 export default {
   name: "App",
@@ -74,6 +76,7 @@ export default {
     FileStreamDownload,
     ImgContent,
     ImgContent2,
+    ParagraphEllipsis,
   },
   data() {
     return {
