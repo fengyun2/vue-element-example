@@ -8,6 +8,8 @@
     >
       <p>
         从旁边树上坠落下来的两颗小果子，刚开始的时候还以为是两颗小葡萄。这两颗小果子在雨中并没有滚来滚去。反而在雨中显得“格外安静”。
+        两片落叶。左侧是红黄色，是先拍到的，之所有想拍，是它在被雨水淋湿后，颜色鲜艳到引起了我的注意。右侧的是在杭州很常见的银杏树叶，在秋天的是时候会是好看的金黄色，可以收集一些来做书签。
+        两片树叶除了颜色不一样，一片像是在水中浸泡过湿漉漉的，而另外一片则像是刚下完澡出来，只挂着一些水珠。
       </p>
       <div class="ne-image-box" style="">
         <img
@@ -85,8 +87,20 @@ export default {
 
 <style scoped>
 .content {
+  line-height: 1.5;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+.content.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+p {
+  padding: 0;
+  margin: 0;
 }
 .content.clamp p {
   /* display: -webkit-box;
