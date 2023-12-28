@@ -32,6 +32,7 @@
       <EleTable v-if="showTableScroll" />
       <FileStreamDownload v-if="showFileStreamDownload" />
     </div> -->
+    <IKeepAlive />
     <HelloWorld />
     <CityDemo />
     <UserDemo />
@@ -61,6 +62,7 @@ import FileStreamDownload from "./components/file-stream-download";
 import ImgContent from "./components/imgcontent";
 import ImgContent2 from "./components/imgcontent2";
 import ParagraphEllipsis from "./components/paragraph-ellipsis";
+import IKeepAlive from "./components/i-keep-alive";
 
 export default {
   name: "App",
@@ -77,6 +79,7 @@ export default {
     ImgContent,
     ImgContent2,
     ParagraphEllipsis,
+    IKeepAlive,
   },
   data() {
     return {
