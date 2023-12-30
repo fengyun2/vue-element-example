@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <h3>keep-alive demo</h3>
     <el-tabs style="margin-top: 15px" v-model="activeName">
       <el-tab-pane
         v-for="tab in tabs"

@@ -33,6 +33,7 @@
       <FileStreamDownload v-if="showFileStreamDownload" />
     </div> -->
     <IKeepAlive />
+    <IProvideInject />
     <HelloWorld />
     <CityDemo />
     <UserDemo />
@@ -63,6 +64,7 @@ import ImgContent from "./components/imgcontent";
 import ImgContent2 from "./components/imgcontent2";
 import ParagraphEllipsis from "./components/paragraph-ellipsis";
 import IKeepAlive from "./components/i-keep-alive";
+import IProvideInject from "./components/i-provide-inject";
 
 export default {
   name: "App",
@@ -80,6 +82,7 @@ export default {
     ImgContent2,
     ParagraphEllipsis,
     IKeepAlive,
+    IProvideInject,
   },
   data() {
     return {
