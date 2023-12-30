@@ -32,20 +32,30 @@
       <EleTable v-if="showTableScroll" />
       <FileStreamDownload v-if="showFileStreamDownload" />
     </div> -->
-    <IKeepAlive />
-    <IProvideInject />
-    <HelloWorld />
-    <CityDemo />
-    <UserDemo />
-    <ImgCompressDemo />
-    <QRcodeReader />
-    <!-- <WordComment /> -->
-    <FileDowload />
-    <EleTable />
-    <FileStreamDownload />
-    <ImgContent />
-    <ImgContent2 />
-    <ParagraphEllipsis />
+
+    <el-row class="demo-block" :gutter="12">
+      <el-col
+        v-for="card in demos"
+        :key="card.name"
+        :span="card.show ? 24 : 8"
+        class="box-item"
+      >
+        <el-card shadow="hover" class="box-card">
+          <div slot="header" class="clearfix">
+            <span>{{ card.title }}</span>
+            <el-button
+              type="text"
+              @click="toggleCard(card)"
+              style="float: right; padding: 3px 0"
+              >展开/收起</el-button
+            >
+          </div>
+          <keep-alive>
+            <component v-if="card.show" :is="card.component" />
+          </keep-alive>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -96,6 +106,92 @@ export default {
       showTableScroll: false,
       showFileStreamDownload: false,
       amount: 0,
+      demos: [
+        {
+          name: "HelloWorld",
+          title: "表格demo",
+          show: false,
+          component: "HelloWorld",
+        },
+        {
+          name: "CityDemo",
+          title: "城市组件",
+          show: false,
+          component: "CityDemo",
+        },
+        {
+          name: "UserDemo",
+          title: "用户组件",
+          show: false,
+          component: "UserDemo",
+        },
+        {
+          name: "ImgCompressDemo",
+          title: "图片压缩组件",
+          show: false,
+          component: "ImgCompressDemo",
+        },
+        {
+          name: "QRcodeReader",
+          title: "二维码识别",
+          show: false,
+          component: "QRcodeReader",
+        },
+        // {
+        //   name: "WordComment",
+        //   title: "划词高亮",
+        //   show: false,
+        //   component: "WordComment",
+        // },
+        {
+          name: "FileDowload",
+          title: "文件下载",
+          show: false,
+          component: "FileDowload",
+        },
+        {
+          name: "EleTable",
+          title: "表格滚动",
+          show: false,
+          component: "EleTable",
+        },
+        {
+          name: "FileStreamDownload",
+          title: "流式文件下载",
+          show: false,
+          component: "FileStreamDownload",
+        },
+        {
+          name: "ImgContent",
+          title: "图片内容",
+          show: false,
+          component: "ImgContent",
+        },
+        {
+          name: "ImgContent2",
+          title: "图片内容2",
+          show: false,
+          component: "ImgContent2",
+        },
+        {
+          name: "ParagraphEllipsis",
+          title: "文字省略",
+          show: false,
+          component: "ParagraphEllipsis",
+        },
+        {
+          name: "IKeepAlive",
+          title: "缓存组件",
+          show: false,
+          component: "IKeepAlive",
+        },
+        {
+          name: "IProvideInject",
+          title: "provide/inject Demo",
+          show: false,
+          component: "IProvideInject",
+        },
+      ],
     };
   },
   watch: {
@@ -114,11 +210,14 @@ export default {
         this.amount += 1;
       }, 500);
     },
+    toggleCard(card) {
+      card.show = !card.show;
+    },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -126,5 +225,27 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.demo-block {
+  display: flex;
+  flex-wrap: wrap;
+  .box-item {
+    margin-top: 12px;
+  }
+}
+
+.box-card {
+  .text {
+    font-size: 14px;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both;
+  }
 }
 </style>
